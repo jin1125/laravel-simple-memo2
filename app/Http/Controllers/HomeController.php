@@ -25,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $memos = Memo::select('memos.*')
+        ->where('user_id', '=', \Auth::id())
+        ->whereNull('deleted_at')
+        ->orderBy('updated_at', 'DESC')
+        ->get();
+
+        dd($memos);
+
         return view('create');
     }
 
