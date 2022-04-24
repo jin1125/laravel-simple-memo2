@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            memo edit
+            メモ編集
             <form class="card-body" action="{{ route('destory') }}" method="POST">
                 @csrf
                 <input type="hidden" name="memo_id" value="{{ $edit_memo[0]['id'] }}">

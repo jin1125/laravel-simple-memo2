@@ -80,11 +80,18 @@
                 <div class="col-md-2 p-0">
                     <div class="card">
                         <div class="card-header">
-                            左カラム
+                            タグ一覧
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                With supporting text below as a natural lead-in to additional content.
+                                <a href="/" class="card-text d-block">
+                                    全て表示
+                                </a>
+                                @foreach ($tags as $tag)
+                                    <a href="/?tag/{{ $tag['id'] }}" class="card-text d-block">
+                                        {{ $tag['name'] }}
+                                    </a>
+                                @endforeach
                             </p>
                         </div>
                     </div>
